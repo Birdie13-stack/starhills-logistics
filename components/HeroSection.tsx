@@ -56,7 +56,7 @@ export default function Hero() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -50, opacity: 0 }}
               transition={{ duration: 1 }}
-              className="text-white font-bold text-4xl md:text-7xl max-w-3xl ml-10 text-left drop-shadow-lg"
+              className="text-white font-bold text-4xl md:text-7xl max-w-3xl ml-10 md:ml-5 text-left drop-shadow-lg"
             >
               {slides[currentIndex].caption}
             </motion.h1>
