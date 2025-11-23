@@ -10,9 +10,10 @@ export default function Home() {
     <div className=" text-neutral">
       <Hero />
       <Services />
-      <Branches />
       <Inquiry />
       <Features />
+      <Branches />
+
       <NewsSection />
     </div>
   );

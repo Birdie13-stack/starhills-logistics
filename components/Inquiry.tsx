@@ -6,9 +6,9 @@ import { Mail } from "lucide-react";
 export default function Inquiry() {
   return (
     <section
-      className="relative w-11/12 mx-auto h-[50vh] md:h-[60vh] bg-cover bg-center flex items-center"
+      className="relative w-11/12 mb-6 mx-auto h-[50vh] md:h-[90vh] bg-cover bg-center flex items-center"
       style={{
-        backgroundImage: "url('images/hero1.jpg')",
+        backgroundImage: "url('images/request.png')",
       }}
     >
       <div className="absolute inset-0 bg-black/60"></div>

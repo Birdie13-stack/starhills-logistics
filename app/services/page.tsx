@@ -63,14 +63,14 @@ const ServicesPage = () => {
     <div className="w-full">
       <div className="relative h-64 md:h-96 w-full">
         <Image
-          src="/images/services-hero.jpg"
+          src="/images/serviceshero.jpg"
           alt="Services Hero"
           fill
           className="object-cover"
         />
       </div>
 
-      <section className="py-12 bg-[#f4f7fa] text-neutral px-6 md:px-20">
+      <section className="py-12 text-neutral px-6 md:px-20">
         <h1 className="text-4xl font-bold text-center mb-6 fade-slide-up">
           Our Services
         </h1>

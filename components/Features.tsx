@@ -24,7 +24,7 @@ export default function Features() {
 
           <FeatureItem
             title="Speed You Can Trust"
-            text="Delays can be costly—so we don't allow them. Our operations are built for efficiency, supported by technology and a dedicated team that delivers on time, every time."
+            text="Delays can be costly, so we don't allow them. Our operations are built for efficiency, supported by technology and a dedicated team that delivers on time, every time."
           />
         </div>
 

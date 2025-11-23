@@ -6,14 +6,16 @@ export const newsData = [
     date: "March 12, 2024",
     image: "/images/hero1.jpg",
     slug: "predictive-routing-africa",
+    content: `Predictive routing is revolutionizing logistics in Africa by reducing delivery delays. Companies are leveraging AI algorithms and real-time traffic data to optimize delivery routes. This approach minimizes fuel consumption, improves delivery speed, and enhances customer satisfaction. As e-commerce continues to grow, predictive routing ensures that logistics companies remain competitive and efficient.`,
   },
   {
     id: 2,
-    category: "Logistics",
-    title: "Why Real-Time Tracking Is the New Standard for Customer Trust",
-    date: "February 28, 2024",
-    image: "/images/hero2.jpg",
-    slug: "real-time-tracking-standard",
+    category: "Tech",
+    title: "The Rise of Autonomous Delivery Drones in Urban Cities",
+    date: "October 5, 2023",
+    image: "/images/hero3.jpg",
+    slug: "autonomous-delivery-drones",
+    content: `Autonomous delivery drones are transforming urban logistics by providing faster and contactless deliveries. These drones can navigate congested cities using advanced sensors and AI-driven flight paths. Companies are experimenting with drone fleets to reduce delivery costs and improve service reliability. The technology also has the potential to reduce carbon emissions associated with traditional delivery vehicles.`,
   },
   {
     id: 3,
@@ -22,8 +24,8 @@ export const newsData = [
     date: "January 18, 2024",
     image: "/images/hero3.jpg",
     slug: "nigeria-courier-sector-outlook-2024",
+    content: `Nigeria’s courier sector is experiencing rapid growth, driven by e-commerce and urbanization. Companies are investing in technology, including real-time tracking and automated warehouses, to improve efficiency. The 2024 outlook suggests continued expansion, with increased competition and innovation shaping the market. Consumers can expect faster delivery times and enhanced services.`,
   },
-
   {
     id: 4,
     category: "Tech",
@@ -31,33 +33,35 @@ export const newsData = [
     date: "November 9, 2023",
     image: "/images/hero1.jpg",
     slug: "ai-transforming-route-optimization",
+    content: `AI-powered route optimization is helping courier companies reduce delivery times and operational costs. By analyzing traffic patterns, weather conditions, and delivery priorities, AI can create the most efficient routes in real time. This technology reduces fuel consumption, minimizes delays, and ensures timely deliveries, making logistics more reliable for businesses and consumers alike.`,
   },
   {
     id: 5,
-    category: "Tech",
-    title: "The Rise of Autonomous Delivery Drones in Urban Cities",
-    date: "October 5, 2023",
-    image: "/images/hero3.jpg",
-    slug: "autonomous-delivery-drones",
-  },
-
-  {
-    id: 6,
     category: "Business",
     title: "How SMEs Can Cut Logistics Costs Without Sacrificing Speed",
     date: "September 14, 2023",
     image: "/images/hero2.jpg",
     slug: "sme-logistics-cost-reduction",
+    content: `Small and medium-sized enterprises (SMEs) can reduce logistics costs by leveraging technology, partnering with third-party logistics providers, and optimizing delivery routes. Cost reduction does not have to compromise speed; efficient planning and predictive analytics allow SMEs to maintain service quality while saving on expenses. Strategic logistics management is key to staying competitive.`,
   },
   {
-    id: 7,
+    id: 6,
     category: "Business",
     title: "The New Competition: Why Speed Is the Ultimate Differentiator",
     date: "July 30, 2023",
     image: "/images/hero3.jpg",
     slug: "speed-as-business-differentiator",
+    content: `In today’s fast-paced market, speed is a critical differentiator. Businesses that can deliver products and services quickly gain customer trust and loyalty. Logistics, supply chain efficiency, and digital solutions all contribute to faster operations. Companies that embrace speed as a core strategy often outperform competitors and achieve higher customer satisfaction.`,
   },
-
+  {
+    id: 7,
+    category: "Logistics",
+    title: "Why Real-Time Tracking Is the New Standard for Customer Trust",
+    date: "February 28, 2024",
+    image: "/images/hero2.jpg",
+    slug: "real-time-tracking-standard",
+    content: `Real-time tracking has become a standard expectation in the logistics industry. Customers want visibility into where their packages are at all times. Companies offering tracking solutions enhance transparency and trust, reduce customer complaints, and improve overall satisfaction. Real-time updates also allow companies to quickly address delays and provide proactive communication.`,
+  },
   {
     id: 8,
     category: "Team",
@@ -65,8 +69,8 @@ export const newsData = [
     date: "May 22, 2023",
     image: "/images/hero2.jpg",
     slug: "women-transforming-last-mile-delivery",
+    content: `Women are increasingly playing a leading role in Nigeria’s last-mile delivery sector. From management positions to operational roles, they are driving innovation, efficiency, and customer service. Their contributions are helping companies optimize deliveries, support communities, and inspire more inclusive participation in the logistics industry.`,
   },
-
   {
     id: 9,
     category: "Web",
@@ -74,5 +78,6 @@ export const newsData = [
     date: "April 10, 2023",
     image: "/images/hero1.jpg",
     slug: "website-speed-logistics",
+    content: `Website speed is crucial for logistics companies because customers expect fast and responsive digital experiences. Slow-loading websites can hurt engagement, reduce inquiries, and impact brand perception. Optimizing images, improving server response times, and using caching strategies help logistics businesses maintain a competitive online presence and improve customer satisfaction.`,
   },
 ];

@@ -45,7 +45,7 @@ export default function NewsSection() {
             {newsData.map((item) => (
               <div
                 key={item.id}
-                className="flex-shrink-0 px-2 md:px-3"
+                className="shrink-0 px-2 md:px-3"
                 style={{ width: `${100 / itemsPerView}%` }}
               >
                 <div className="bg-white overflow-hidden h-full">
@@ -66,9 +66,9 @@ export default function NewsSection() {
                       {item.title}
                     </h3>
                     <Link
-                      href={`/home/news/${item.category.toLowerCase()}/${
-                        item.slug
-                      }`}
+                      href={`/news/${item.category
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}/${item.slug}`}
                       className="text-[#0a84ff] font-semibold hover:underline"
                     >
                       Read more →
