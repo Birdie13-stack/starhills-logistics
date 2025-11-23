@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import logo from "../public/images/logo.png";
 import { Menu, X } from "lucide-react";
 
-const Navbar = () => {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white py-3 px-5 shadow-md relative z-50">
+    <header className="fixed bg-white py-3 px-5 shadow-md w-full z-50">
       <div className="flex justify-between items-center w-full">
         <Image src={logo} alt="Starhills Logo" className="w-24" />
 
@@ -86,8 +86,8 @@ const Navbar = () => {
           </button>
         </ul>
       </div>
-    </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;
