@@ -9,6 +9,7 @@ export default function NewsSection() {
   const [index, setIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
 
+  // Update items per view on resize
   useEffect(() => {
     const updateView = () => {
       if (window.innerWidth >= 1024) setItemsPerView(3);
@@ -32,7 +33,7 @@ export default function NewsSection() {
   };
 
   return (
-    <section className="w-[90%] md:w-[90%] mx-auto pb-7 md:py-16">
+    <section className="w-[95%] md:w-[90%] mx-auto py-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-8">Latest News</h2>
 
       <div className="relative group">
@@ -45,7 +46,7 @@ export default function NewsSection() {
             {newsData.map((item) => (
               <div
                 key={item.id}
-                className="shrink-0 px-2 md:px-3"
+                className="flex-shrink-0 px-2 md:px-3"
                 style={{ width: `${100 / itemsPerView}%` }}
               >
                 <div className="bg-white overflow-hidden h-full">
@@ -59,17 +60,17 @@ export default function NewsSection() {
                       <span className="uppercase font-semibold">
                         {item.category}
                       </span>
-                      <span className="w-6 h-0.5 bg-[#0055a4]"></span>
+                      <span className="w-6 h-0.5 bg-blue-600"></span>
                       <span>{item.date}</span>
                     </div>
-                    <h3 className="text-lg font-semibold uppercase mb-4 transition-all duration-300 hover:text-[#0a84ff]">
+                    <h3 className="text-lg font-semibold uppercase mb-4">
                       {item.title}
                     </h3>
                     <Link
-                      href={`/news/${item.category
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}/${item.slug}`}
-                      className="text-[#0a84ff] font-semibold hover:underline"
+                      href={`/home/news/${item.category.toLowerCase()}/${
+                        item.slug
+                      }`}
+                      className="text-blue-700 font-semibold hover:underline"
                     >
                       Read more →
                     </Link>
@@ -82,13 +83,13 @@ export default function NewsSection() {
 
         <button
           onClick={prev}
-          className="absolute -left-3.5 md:-left-8 top-1/3 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute -left-6 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           <ChevronLeft />
         </button>
         <button
           onClick={next}
-          className="absolute -right-3.5 md:-right-8  top-1/3 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute -right-6 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           <ChevronRight />
         </button>
