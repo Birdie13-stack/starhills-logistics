@@ -19,9 +19,8 @@ export default function Inquiry() {
         </h2>
 
         <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-6 animate-slideUp delay-200">
-          Send us your inquiry and we’ll prepare a tailored, obligation-free
-          quote. Every request is handled with speed, clarity, and
-          professionalism.
+          Have a request? Reach out and we’ll respond with clarity and speed.
+          Your satisfaction starts with us.
         </p>
 
         {/* <a

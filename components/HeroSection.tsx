@@ -99,7 +99,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="mt-8 flex gap-4"
               >
-                <button className="bg-[#0a84ff] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0070dd] transition-colors">
+                <button className="bg-[#0a84ff] text-white px-3 md:px-8 py-3 rounded-lg font-semibold hover:bg-[#0070dd] transition-colors">
                   Get a Quote
                 </button>
                 <Link
