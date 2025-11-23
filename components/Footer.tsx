@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 import logo from "../public/images/logo.png";
 import {
   FaFacebookF,
@@ -29,18 +30,52 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
     <footer className="bg-[#0055A4] text-white pt-16 pb-6">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-        <div>
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <motion.div
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <Image src={logo} alt="Starhills Logo" className="w-32 mb-4" />
           <p className="text-white/80">
             Your trusted partner for fast, reliable, and secure delivery
             services across Nigeria and beyond.
           </p>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2">
             {navLinks.map((link) => (
@@ -54,9 +89,12 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h3 className="font-semibold text-lg mb-4">Branches</h3>
           <ul className="space-y-2 text-white/80 text-sm">
             <li>Lagos: 08160120876</li>
@@ -65,10 +103,12 @@ const Footer = () => {
             <li>Ibadan: 08079013662</li>
             <li>Abuja: 08058479185</li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Social Media */}
-        <div>
+        <motion.div
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
           <div className="flex gap-4">
             {socialLinks.map((social, i) => (
@@ -83,13 +123,18 @@ const Footer = () => {
               </a>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="mt-10 border-t border-white/30 pt-6 text-center text-white/60 text-sm">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        className="mt-10 border-t border-white/30 pt-6 text-center text-white/60 text-sm"
+      >
         &copy; {new Date().getFullYear()} Starhills Logistics. All rights
         reserved.
-      </div>
+      </motion.div>
     </footer>
   );
 };
