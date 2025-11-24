@@ -40,18 +40,39 @@ export default function Branches() {
           Our Branches
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {branches.map((branch, index) => (
-            <div
-              key={index}
-              className="border-l-6 border-[#0055a4] rounded-lg p-6 bg-[#f4f7fa] transition-all duration-300 shadow-sm"
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+          role="list"
+        >
+          {branches.map((branch) => (
+            <article
+              key={branch.city}
+              className="relative border-l-4 border-[#0055a4] rounded-lg p-6 transition-all duration-300 shadow-sm hover:shadow-md focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 overflow-hidden group"
+              role="listitem"
             >
-              <h3 className="text-2xl font-semibold text-[#0055a4] mb-2">
-                {branch.city}
-              </h3>
-              <p className="text-md mb-3">📍 {branch.address}</p>
-              <p className="font-medium text-[#0a84ff]">📞 {branch.phone}</p>
-            </div>
+              <div className="absolute inset-0 bg-[#0055a4] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-lg"></div>
+
+              <div className="relative z-10">
+                <h3 className="text-2xl font-semibold text-[#0055a4] group-hover:text-white transition-colors duration-500 mb-2">
+                  {branch.city}
+                </h3>
+                <p className="text-md mb-3 text-gray-700 group-hover:text-white transition-colors duration-500">
+                  <span aria-hidden="true">📍 </span>
+                  <span className="sr-only">Address: </span>
+                  {branch.address}
+                </p>
+                <p className="font-medium text-[#0a84ff] group-hover:text-white transition-colors duration-500">
+                  <span aria-hidden="true">📞 </span>
+                  <a
+                    href={`tel:${branch.phone.replace(/\s+/g, "")}`}
+                    className="hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+                    aria-label={`Call ${branch.city} branch at ${branch.phone}`}
+                  >
+                    {branch.phone}
+                  </a>
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

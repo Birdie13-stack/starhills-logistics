@@ -53,7 +53,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0055A4] text-white pt-16 pb-6">
+    <footer
+      className="bg-[#0055A4] text-white pt-16 pb-6"
+      role="contentinfo"
+      aria-labelledby="footer-heading"
+    >
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
+
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -65,7 +73,13 @@ const Footer = () => {
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Image src={logo} alt="Starhills Logo" className="w-32 mb-4" />
+          <Link
+            href="/"
+            className="inline-block focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded mb-4"
+            aria-label="Starhills Logistics home"
+          >
+            <Image src={logo} alt="Starhills Logistics logo" className="w-32" />
+          </Link>
           <p className="text-white/80">
             Your trusted partner for fast, reliable, and secure delivery
             services across Nigeria and beyond.
@@ -76,53 +90,122 @@ const Footer = () => {
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="inline-block transition-all duration-300 transform hover:translate-x-2 hover:text-[#0A84FF]"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <h3 id="quick-links-heading" className="font-semibold text-lg mb-4">
+            Quick Links
+          </h3>
+          <nav aria-labelledby="quick-links-heading">
+            <ul className="space-y-2" role="list">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="inline-block transition-all duration-300 transform hover:translate-x-2 hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h3 className="font-semibold text-lg mb-4">Branches</h3>
-          <ul className="space-y-2 text-white/80 text-sm">
-            <li>Lagos: 08160120876</li>
-            <li>Port Harcourt: 081-234-5678</li>
-            <li>Asaba: 08057719294</li>
-            <li>Ibadan: 08079013662</li>
-            <li>Abuja: 08058479185</li>
-          </ul>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-          <div className="flex gap-4">
-            {socialLinks.map((social, i) => (
+          <h3 id="branches-heading" className="font-semibold text-lg mb-4">
+            Branches
+          </h3>
+          <ul
+            className="space-y-2 text-white/80 text-sm"
+            aria-labelledby="branches-heading"
+            role="list"
+          >
+            <li>
+              <span className="font-medium">Lagos:</span>{" "}
               <a
-                key={i}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block transition-all duration-300 transform hover:translate-x-1 hover:text-[#0A84FF]"
+                href="tel:08160120876"
+                className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
+                aria-label="Call Lagos branch"
               >
-                {social.icon}
+                08160120876
               </a>
-            ))}
-          </div>
+            </li>
+            <li>
+              <span className="font-medium">Port Harcourt:</span>{" "}
+              <a
+                href="tel:0812345678"
+                className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
+                aria-label="Call Port Harcourt branch"
+              >
+                0812345678
+              </a>
+            </li>
+            <li>
+              <span className="font-medium">Asaba:</span>{" "}
+              <a
+                href="tel:08057719294"
+                className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
+                aria-label="Call Asaba branch"
+              >
+                08057719294
+              </a>
+            </li>
+            <li>
+              <span className="font-medium">Ibadan:</span>{" "}
+              <a
+                href="tel:08079013662"
+                className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
+                aria-label="Call Ibadan branch"
+              >
+                08079013662
+              </a>
+            </li>
+            <li>
+              <span className="font-medium">Abuja:</span>{" "}
+              <a
+                href="tel:08058479185"
+                className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
+                aria-label="Call Abuja branch"
+              >
+                08058479185
+              </a>
+            </li>
+          </ul>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h3 id="social-heading" className="font-semibold text-lg mb-4">
+            Follow Us
+          </h3>
+          <nav aria-labelledby="social-heading">
+            <ul className="flex gap-4" role="list">
+              {socialLinks.map((social, i) => (
+                <li key={i}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-all duration-300 transform hover:scale-110 hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded p-1"
+                    aria-label={`Follow us on ${
+                      social.href.includes("instagram")
+                        ? "Instagram"
+                        : social.href.includes("facebook")
+                        ? "Facebook"
+                        : social.href.includes("twitter")
+                        ? "Twitter"
+                        : "LinkedIn"
+                    }`}
+                  >
+                    <span aria-hidden="true">{social.icon}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </motion.div>
       </motion.div>
 
@@ -131,9 +214,12 @@ const Footer = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         className="mt-10 border-t border-white/30 pt-6 text-center text-white/60 text-sm"
+        role="contentinfo"
       >
-        &copy; {new Date().getFullYear()} Starhills Logistics. All rights
-        reserved.
+        <p>
+          &copy; {new Date().getFullYear()} Starhills Logistics. All rights
+          reserved.
+        </p>
       </motion.div>
     </footer>
   );

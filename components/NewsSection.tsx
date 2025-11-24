@@ -154,7 +154,7 @@ export default function NewsSection() {
 
         <button
           onClick={prev}
-          className="hidden md:block absolute -left-6 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-label="Show previous news articles"
           disabled={index === 0}
         >
@@ -162,7 +162,7 @@ export default function NewsSection() {
         </button>
         <button
           onClick={next}
-          className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full shadow hover:bg-[#0055a4] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-label="Show next news articles"
           disabled={index >= maxIndex}
         >
