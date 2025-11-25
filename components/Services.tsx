@@ -1,13 +1,6 @@
 import { Boxes, Truck } from "lucide-react";
 import { BiSupport } from "react-icons/bi";
-import {
-  FaTruck,
-  FaWarehouse,
-  FaGlobe,
-  FaBoxes,
-  FaHeadset,
-  FaMapMarkedAlt,
-} from "react-icons/fa";
+import { FaWarehouse, FaGlobe, FaMapMarkedAlt } from "react-icons/fa";
 
 const services = [
   {

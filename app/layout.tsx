@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../app/globals.css"; // global Tailwind + styles
+import "../app/globals.css";
 
 export default function RootLayout({
   children,

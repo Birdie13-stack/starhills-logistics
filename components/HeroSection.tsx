@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -8,30 +8,34 @@ import Link from "next/link";
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const slides = [
-    {
-      url: "/images/hero1.jpg",
-      title: "Logistics Without Limits",
-      subtitle: "Fast, reliable shipping across Nigeria and beyond",
-    },
-    {
-      url: "/images/hero2.jpg",
-      title: "Your World, Delivered",
-      subtitle: "International freight solutions built for speed and security",
-    },
-    {
-      url: "/images/hero3.jpg",
-      title: "Store Smart, Ship Faster",
-      subtitle: "Flexible warehousing that scales with your business",
-    },
-  ];
+  const slides = useMemo(
+    () => [
+      {
+        url: "/images/hero1.jpg",
+        title: "Logistics Without Limits",
+        subtitle: "Fast, reliable shipping across Nigeria and beyond",
+      },
+      {
+        url: "/images/hero2.jpg",
+        title: "Your World, Delivered",
+        subtitle:
+          "International freight solutions built for speed and security",
+      },
+      {
+        url: "/images/hero3.jpg",
+        title: "Store Smart, Ship Faster",
+        subtitle: "Flexible warehousing that scales with your business",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     slides.forEach((slide) => {
       const img = new Image();
       img.src = slide.url;
     });
-  }, []);
+  }, [slides]);
 
   useEffect(() => {
     const timer = setInterval(() => {

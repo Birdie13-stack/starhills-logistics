@@ -3,13 +3,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  FaTruck,
-  FaBoxOpen,
-  FaGlobe,
-  FaWarehouse,
-  FaShippingFast,
-} from "react-icons/fa";
+import { FaTruck, FaGlobe, FaWarehouse, FaShippingFast } from "react-icons/fa";
 
 const servicesGrid = [
   {
