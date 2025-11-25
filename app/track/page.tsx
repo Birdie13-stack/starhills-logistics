@@ -31,7 +31,7 @@ function page() {
 
         <div className="mt-6">
           <a
-            href="mailto:info@starhillslogistics.com"
+            href="mailto:Starhillslogistics@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all"
           >
             Contact Support

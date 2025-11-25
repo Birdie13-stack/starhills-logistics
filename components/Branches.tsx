@@ -7,7 +7,7 @@ const branches = [
   {
     city: "Port Harcourt",
     address: "5 Nkpogu Road Trans Amadi, PH",
-    phone: "",
+    phone: "08160577628",
   },
   {
     city: "Asaba",
@@ -28,7 +28,7 @@ const branches = [
   {
     city: "Onne, Rivers",
     address: "105 harbor Rd, Onne rivers state",
-    phone: "",
+    phone: "08160577628",
   },
 ];
 

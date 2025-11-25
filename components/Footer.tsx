@@ -138,7 +138,7 @@ const Footer = () => {
                 className="hover:text-[#0A84FF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0055A4] rounded px-1 transition-colors"
                 aria-label="Call Port Harcourt branch"
               >
-                0812345678
+                08160577628
               </a>
             </li>
             <li>

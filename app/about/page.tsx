@@ -8,6 +8,10 @@ import {
   FaClock,
   FaHeadset,
   FaNetworkWired,
+  FaTruck,
+  FaGlobe,
+  FaBoxes,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import Image from "next/image";
 
@@ -42,6 +46,25 @@ const AboutPage = () => {
     },
   ];
 
+  const stats = [
+    {
+      icon: <FaGlobe size={40} />,
+      number: "220+",
+      label: "Countries Worldwide",
+    },
+    {
+      icon: <FaBoxes size={40} />,
+      number: "1,000+",
+      label: "Deliveries Completed",
+    },
+    {
+      icon: <FaMapMarkerAlt size={40} />,
+      number: "10+",
+      label: "Nigerian Cities",
+    },
+    { icon: <FaTruck size={40} />, number: "5+", label: "Years of Excellence" },
+  ];
+
   return (
     <div className="w-full">
       <section
@@ -56,7 +79,7 @@ const AboutPage = () => {
           priority
         />
         <div
-          className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent flex items-center"
+          className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center"
           aria-hidden="true"
         >
           <div className="container mx-auto px-6 md:px-12">
@@ -91,6 +114,46 @@ const AboutPage = () => {
             with the final objective of safely and promptly delivering all our
             customers&apos; consignments as expected.
           </p>
+        </div>
+      </section>
+
+      <section
+        className="py-16 bg-[#0055A4] text-white"
+        aria-labelledby="stats-heading"
+      >
+        <h2 id="stats-heading" className="sr-only">
+          Our Achievements
+        </h2>
+        <div className="container mx-auto px-6">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+            role="list"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center"
+                role="listitem"
+              >
+                <div className="mb-4 text-[#0A84FF]" aria-hidden="true">
+                  {stat.icon}
+                </div>
+                <div
+                  className="text-4xl md:text-5xl font-bold mb-2"
+                  aria-label={`${stat.number} ${stat.label}`}
+                >
+                  {stat.number}
+                </div>
+                <div className="text-white/80 text-sm md:text-base">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -138,7 +201,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section
         className="py-20 px-6 bg-white"
         aria-labelledby="mission-vision-heading"

@@ -17,7 +17,7 @@ const contacts = [
   {
     name: "Email",
     icon: <FaEnvelope size={40} />,
-    href: `mailto:client@example.com?subject=${encodeURIComponent(
+    href: `mailto:Starhillslogistics@gmail.com?subject=${encodeURIComponent(
       "Inquiry from Starhills Logistics Website"
     )}&body=${encodeURIComponent(
       "Hi, I'd like to get in touch regarding your services."

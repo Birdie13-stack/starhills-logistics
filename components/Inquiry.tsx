@@ -30,9 +30,9 @@ export default function Inquiry() {
 
         <div className="btn-wrapper">
           <a
-            href="mailto:info@starhillslogistics.com"
+            href="mailto:Starhillslogistics@gmail.com"
             className="cp-btn inline-flex items-center gap-2 px-8 py-3 text-white font-semibold uppercase border-2 border-white relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-all"
-            aria-label="Send inquiry via email to info@starhillslogistics.com"
+            aria-label="Send inquiry via email to Starhillslogistics@gmail.com"
           >
             <Mail className="w-5 h-5" aria-hidden="true" />
             <span>Send Request</span>
