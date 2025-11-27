@@ -105,7 +105,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+            className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-12 items-start"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
