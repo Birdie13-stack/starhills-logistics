@@ -20,7 +20,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: <FaFacebookF />, href: "#" },
+  {
+    icon: <FaFacebookF />,
+    href: "https://www.facebook.com/people/Starhills-Logistics-Ltd/61583387831330/",
+  },
   { icon: <FaTwitter />, href: "#" },
   {
     icon: <FaInstagram />,
