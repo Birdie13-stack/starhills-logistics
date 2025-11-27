@@ -68,21 +68,19 @@ const AboutPage = () => {
 
   return (
     <div className="w-full">
+      {/* Hero Section */}
       <section
         className="relative h-[70vh] w-full"
         aria-label="About us hero image"
       >
         <Image
           src="/images/hero2.jpg"
-          alt="Starhills Logistics operations and delivery services"
+          alt="Starhills Logistics operations"
           fill
           className="object-cover"
           priority
         />
-        <div
-          className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent flex items-center"
-          aria-hidden="true"
-        >
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent flex items-center">
           <div className="container mx-auto px-6 md:px-12 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -101,85 +99,63 @@ const AboutPage = () => {
       </section>
 
       <section className="py-24 px-6 bg-white" aria-labelledby="about-heading">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2
-              id="about-heading"
-              className="text-5xl md:text-6xl font-bold text-[#0055A4] mb-10"
-            >
-              Who We Are
-            </h2>
-            <div
-              className="w-20 h-1 bg-[#0A84FF] mx-auto mb-10"
-              aria-hidden="true"
-            />
-            <p className="text-xl md:text-2xl text-neutral/80 leading-relaxed mb-8">
-              Starhills is a provider of end-to-end logistics solutions to
-              businesses and institutions across Nigeria. We are currently among
-              the top logistics providers in the country, operating from
-              multiple hubs across Nigeria.
-            </p>
-            <p className="text-lg md:text-xl text-neutral/70 leading-relaxed">
-              We offer a wide array of express, courier and logistic support
-              solutions aimed at helping customers re-engineer and re-invent
-              their businesses to compete successfully in an ever-changing
-              marketplace, with the final objective of safely and promptly
-              delivering all our customers&apos; consignments as expected.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section
-        className="py-24 px-6 bg-linear-to-b from-white via-[#f4f7fa] to-white"
-        aria-labelledby="video-heading"
-      >
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
           >
-            <h2
-              id="video-heading"
-              className="text-4xl md:text-5xl font-bold text-[#0055A4] mb-4"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              See Us In Action
-            </h2>
-            <p className="text-lg md:text-xl text-neutral/70 max-w-2xl mx-auto">
-              Watch how we deliver excellence across Nigeria and beyond
-            </p>
-          </motion.div>
+              <video
+                src="/videos/about-us.mp4"
+                controls
+                playsInline
+                className="w-full rounded-3xl shadow-2xl"
+              />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow ring-4 ring-[#0055A4]/10"
-          >
-            <video
-              src="/videos/about-us.mp4"
-              controls
-              autoPlay={false}
-              muted={false}
-              loop={false}
-              playsInline
-              className="w-full h-full object-cover"
-              poster="/images/thumbnail.png"
-            />
+            <div>
+              <h2
+                id="about-heading"
+                className="text-5xl mt-20 md:text-6xl font-bold text-[#0055A4] mb-6"
+              >
+                Who We Are
+              </h2>
+              <p className="text-xl md:text-2xl text-neutral/80 leading-relaxed mb-10">
+                Starhills provides end-to-end logistics solutions to businesses
+                and institutions across Nigeria. We are among the top providers,
+                operating from multiple hubs nationwide.
+              </p>
+              <p className="text-lg md:text-xl text-neutral/70 leading-relaxed mb-10">
+                We offer comprehensive express, courier, and logistics services
+                that empower businesses to evolve, optimize operations, and
+                remain competitive. Above all, we are committed to ensuring
+                every consignment arrives safely and on schedule.
+              </p>
+
+              <ul className="mb-10 space-y-2 text-neutral/70 text-lg">
+                <li>✔ Fast, reliable delivery across Nigeria</li>
+                <li>✔ Nationwide coverage with multiple hubs</li>
+                <li>✔ Customer-first logistics experience</li>
+                <li>✔ Real-time tracking and support</li>
+              </ul>
+
+              <Link
+                href="/contact"
+                className="inline-block bg-[#0055A4] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#004080] transition-shadow shadow-lg"
+              >
+                Learn More
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
-
       <section
         className="py-20 bg-linear-to-br from-[#0055A4] to-[#0A84FF] text-white relative overflow-hidden"
         aria-labelledby="stats-heading"
@@ -196,6 +172,7 @@ const AboutPage = () => {
         <h2 id="stats-heading" className="sr-only">
           Our Achievements
         </h2>
+
         <div className="container mx-auto px-6 relative z-10">
           <div
             className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center"
@@ -217,12 +194,14 @@ const AboutPage = () => {
                 >
                   {stat.icon}
                 </div>
+
                 <div
                   className="text-5xl md:text-6xl font-extrabold mb-3"
                   aria-label={`${stat.number} ${stat.label}`}
                 >
                   {stat.number}
                 </div>
+
                 <div className="text-white/90 text-base md:text-lg font-medium">
                   {stat.label}
                 </div>
@@ -232,59 +211,34 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section
-        className="py-24 px-6 bg-[#f4f7fa]"
-        aria-labelledby="why-choose-heading"
-      >
-        <div className="container mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2
-              id="why-choose-heading"
-              className="text-4xl md:text-5xl font-bold text-[#0055A4] mb-4"
-            >
-              Why Choose Us
-            </h2>
-            <p className="text-lg text-neutral/70 max-w-2xl mx-auto">
-              We combine reliability, speed, and care in every delivery
-            </p>
-          </motion.div>
+      <section className="py-24 px-6 bg-[#f4f7fa]">
+        <div className="container mx-auto max-w-7xl text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0055A4] mb-4">
+            Why Choose Us
+          </h2>
+          <p className="text-lg text-neutral/70 max-w-2xl mx-auto">
+            We combine reliability, speed, and care in every delivery.
+          </p>
+        </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            role="list"
-          >
-            {whyChooseUs.map((item, index) => (
-              <motion.article
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-all hover:-translate-y-2 focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2"
-                role="listitem"
-                tabIndex={0}
-              >
-                <div
-                  className="inline-flex items-center justify-center w-24 h-24 bg-linear-to-br from-[#0055A4] to-[#0A84FF] text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg"
-                  aria-hidden="true"
-                >
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-neutral/70 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.article>
-            ))}
-          </div>
+        <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {whyChooseUs.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition"
+            >
+              <div className="w-24 h-24 mx-auto bg-[#0055A4] text-white rounded-2xl mb-6 flex items-center justify-center">
+                {item.icon}
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {item.title}
+              </h3>
+              <p className="text-neutral/70">{item.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -295,6 +249,7 @@ const AboutPage = () => {
         <h2 id="mission-vision-heading" className="sr-only">
           Mission and Vision
         </h2>
+
         <div className="container mx-auto max-w-7xl">
           <motion.div
             ref={ref}
@@ -310,11 +265,12 @@ const AboutPage = () => {
                 className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"
                 aria-hidden="true"
               />
+
               <h3 className="text-4xl font-bold mb-6 relative z-10">
                 Our Mission
               </h3>
               <p className="text-white/95 leading-relaxed text-lg relative z-10">
-                To provide fast, secure and reliable logistic services through
+                To provide fast, secure, and reliable logistics services through
                 technology-driven solutions that ensure every delivery is
                 smooth, trackable, and stress-free for both businesses and
                 individuals.
@@ -331,6 +287,7 @@ const AboutPage = () => {
                 className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"
                 aria-hidden="true"
               />
+
               <h3 className="text-4xl font-bold mb-6 relative z-10">
                 Our Vision
               </h3>
@@ -344,28 +301,19 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-linear-to-r from-[#0055A4] to-[#0A84FF] text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Work with Us?
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Let&apos;s discuss how we can support your logistics needs
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-white text-[#0055A4] px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-2xl hover:shadow-3xl focus:outline-none focus:ring-4 focus:ring-white/50"
-            >
-              Get in Touch
-            </Link>
-          </motion.div>
-        </div>
+      <section className="py-20 px-6 bg-linear-to-r from-[#0055A4] to-[#0A84FF] text-white text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Ready to Work with Us?
+        </h2>
+        <p className="text-xl text-white/85 mb-8">
+          Let’s discuss how we can support your logistics needs.
+        </p>
+        <Link
+          href="/contact"
+          className="bg-white text-[#0055A4] px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg"
+        >
+          Get in Touch
+        </Link>
       </section>
     </div>
   );
