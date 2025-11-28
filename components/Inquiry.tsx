@@ -1,21 +1,43 @@
 "use client";
 
-import React from "react";
-import { Mail } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Mail, Pause, Play, Volume2, VolumeX } from "lucide-react";
 
 export default function Inquiry() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    isPlaying ? videoRef.current.pause() : videoRef.current.play();
+    setIsPlaying(!isPlaying);
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
   return (
     <section
       className="relative w-11/12 mb-6 mx-auto h-[50vh] md:h-[90vh] bg-cover bg-center flex items-center"
-      style={{
-        backgroundImage: "url('images/request.png')",
-      }}
       role="region"
       aria-labelledby="inquiry-heading"
     >
-      <div className="absolute inset-0 bg-black/60" aria-hidden="true"></div>
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+      >
+        <source src="/videos/hero-festive.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-black/20" aria-hidden="true"></div>
 
-      <div className="relative z-10 max-w-2xl px-6 md:px-12">
+      <div className="relative z-10 max-w-2xl px-6 md:px-12 ">
         <h2
           id="inquiry-heading"
           className="text-white text-3xl md:text-5xl font-extrabold mb-4"
@@ -38,6 +60,22 @@ export default function Inquiry() {
             <span>Send Request</span>
           </a>
         </div>
+      </div>
+
+      <div className="absolute bottom-6 right-6 flex gap-3 z-[3]">
+        <button
+          onClick={togglePlay}
+          className="bg-black/60 hover:bg-black/80 text-white p-3 rounded-full"
+        >
+          {isPlaying ? <Pause size={22} /> : <Play size={22} />}
+        </button>
+
+        <button
+          onClick={toggleMute}
+          className="bg-black/60 hover:bg-black/80 text-white p-3 rounded-full"
+        >
+          {isMuted ? <VolumeX size={22} /> : <Volume2 size={22} />}
+        </button>
       </div>
     </section>
   );
