@@ -1,32 +1,30 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../app/globals.css";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Starhills Logistics — Fast & Reliable Delivery",
-  description: "Efficient cargo and freight transport across the nation",
-  keywords:
-    "logistics, delivery, freight, international shipping, Nigeria shipping, courier, warehousing",
-
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const siteUrl = "https://starhillslogistics.com";
+  return {
+    metadataBase: new URL(siteUrl),
     title: "Starhills Logistics — Fast & Reliable Delivery",
     description: "Efficient cargo and freight transport across the nation",
-    url: "https://starhillslogistics.com",
-    siteName: "Starhills Logistics",
-    type: "website",
-    // images: [
-    //   {
-    //     url: "",
-    //     width: 1200,
-    //     height: 630,
-    //   },
-    // ],
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+    keywords:
+      "logistics, delivery, freight, international shipping, Nigeria shipping, courier, warehousing",
+    openGraph: {
+      title: "Starhills Logistics — Fast & Reliable Delivery",
+      description: "Efficient cargo and freight transport across the nation",
+      url: siteUrl,
+      siteName: "Starhills Logistics",
+      type: "website",
+    },
+    icons: {
+      icon: "/favicon.ico",
+    },
+    alternates: {
+      canonical: "./",
+    },
+  };
+}
 
 export default function RootLayout({
   children,
