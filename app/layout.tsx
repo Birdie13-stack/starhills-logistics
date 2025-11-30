@@ -2,6 +2,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../app/globals.css";
 
+export const metadata = {
+  title: "Starhills Logistics — Fast & Reliable Delivery",
+  description: "Efficient cargo and freight transport across the nation",
+};
+
 export default function RootLayout({
   children,
 }: {
