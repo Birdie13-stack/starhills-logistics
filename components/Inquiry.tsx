@@ -34,6 +34,13 @@ export default function Inquiry() {
         playsInline
       >
         <source src="/videos/hero-festive.mp4" type="video/mp4" />
+        <track
+          kind="captions"
+          src="/captions/hero-captions.vtt"
+          srcLang="en"
+          label="English"
+        />
+        Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/20" aria-hidden="true"></div>
 
@@ -62,10 +69,11 @@ export default function Inquiry() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 right-6 flex gap-3 z-[3]">
+      <div className="absolute bottom-6 right-6 flex gap-3 z-3">
         <button
           onClick={togglePlay}
           className="bg-black/60 hover:bg-black/80 text-white p-3 rounded-full"
+          aria-label={isPlaying ? "Pause video" : "Play video"}
         >
           {isPlaying ? <Pause size={22} /> : <Play size={22} />}
         </button>
@@ -73,6 +81,7 @@ export default function Inquiry() {
         <button
           onClick={toggleMute}
           className="bg-black/60 hover:bg-black/80 text-white p-3 rounded-full"
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
         >
           {isMuted ? <VolumeX size={22} /> : <Volume2 size={22} />}
         </button>

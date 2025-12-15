@@ -4,6 +4,7 @@ import { newsData } from "@/data/newsData";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function NewsSection() {
   const [index, setIndex] = useState(0);
@@ -60,7 +61,10 @@ export default function NewsSection() {
                 aria-label={`News article ${idx + 1} of ${totalItems}`}
               >
                 <div className="bg-white overflow-hidden h-full">
-                  <img
+                  <Image
+                    width={1920}
+                    height={1080}
+                    quality={75}
                     src={item.image}
                     alt={`${item.title} featured image`}
                     className="w-full h-60 object-cover"
@@ -113,7 +117,10 @@ export default function NewsSection() {
                 aria-label={`News article ${idx + 1} of ${totalItems}`}
               >
                 <div className="bg-white overflow-hidden h-full">
-                  <img
+                  <Image
+                    width={1920}
+                    height={1080}
+                    quality={75}
                     src={item.image}
                     alt={`${item.title} featured image`}
                     className="w-full h-60 object-cover"

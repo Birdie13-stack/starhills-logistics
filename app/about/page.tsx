@@ -68,7 +68,6 @@ const AboutPage = () => {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
       <section
         className="relative h-[70vh] w-full"
         aria-label="About us hero image"
@@ -139,11 +138,18 @@ const AboutPage = () => {
                 every consignment arrives safely and on schedule.
               </p>
 
-              <ul className="mb-10 space-y-2 text-neutral/70 text-lg">
-                <li>✔ Fast, reliable delivery across Nigeria</li>
-                <li>✔ Nationwide coverage with multiple hubs</li>
-                <li>✔ Customer-first logistics experience</li>
-                <li>✔ Real-time tracking and support</li>
+              <ul
+                className="mb-10 space-y-2 text-neutral/70 text-lg"
+                role="list"
+              >
+                <li role="listitem">
+                  ✔ Fast, reliable delivery across Nigeria
+                </li>
+                <li role="listitem">
+                  ✔ Nationwide coverage with multiple hubs
+                </li>
+                <li role="listitem">✔ Customer-first logistics experience</li>
+                <li role="listitem">✔ Real-time tracking and support</li>
               </ul>
 
               <Link

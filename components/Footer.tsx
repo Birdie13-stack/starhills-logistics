@@ -17,6 +17,7 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Track", href: "/track" },
   { name: "Contact", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const socialLinks = [
@@ -216,7 +217,7 @@ const Footer = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-        className="mt-10 border-t border-white/30 pt-6 text-center text-white/60 text-sm"
+        className="mt-10 border-t border-white/30 pt-6 text-center text-white text-sm"
         role="contentinfo"
       >
         <p>
