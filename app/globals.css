@@ -7,29 +7,6 @@
   --neutral: #1a1a1a;
 }
 
-.typing {
-  width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid white;
-  animation: typing 3s steps(40, end), blink 0.7s infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -116,6 +93,18 @@
   opacity: 1;
   top: 15px;
   left: 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 @keyframes slideLeft {
