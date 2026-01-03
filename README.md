@@ -5,7 +5,7 @@ A modern, responsive logistics and shipping website built with Next.js 16, TypeS
 ## 🚀 Live Site
 
 - **Production URL:** https://starhillslogistics.com
-- **Vercel Dashboard:** [Your Vercel Project](https://vercel.com/dashboard)
+- **Vercel Dashboard:** [Vercel Dashboard](https://vercel.com/birdie13stacks-projects/starhills-logistics/J6E6DrYcNscz9agLpTvotPAVubV3)
 
 ## 📋 Table of Contents
 
@@ -46,10 +46,11 @@ A modern, responsive logistics and shipping website built with Next.js 16, TypeS
 
 ### Pages
 1. **Home** (`/`) - Landing page with service overview
-2. **Tracking** (`/track`) - Real-time shipment tracking
-3. **Contact** (`/contact`) - Multiple contact options + form
-4. **Privacy Policy** (`/privacy-policy`) - GDPR-compliant privacy information
-5. **Delete Account** (`/delete-account`) - Data deletion policy
+2. **About** (`/about`) - About page
+3. **Services** (`/services`)
+4. **Tracking** (`/track`) - Real-time shipment tracking
+5. **Contact** (`/contact`) - Multiple contact options + form
+6. **Privacy Policy** (`/privacy-policy`) - GDPR-compliant privacy information
 
 ---
 
@@ -92,7 +93,7 @@ starhillslogistics/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/starhillslogistics.git
+   git clone https://github.com/birdie13-stack/starhillslogistics.git
    cd starhillslogistics
    ```
 
@@ -203,14 +204,6 @@ GDPR-compliant privacy policy covering:
 - User rights
 - Cookies
 - Contact information
-
-### 4. Delete Account (`/delete-account`)
-
-Data deletion policy covering:
-- Right to deletion (GDPR Article 17)
-- Deletion process
-- Data retention requirements
-- Timeline for deletion
 
 ---
 
